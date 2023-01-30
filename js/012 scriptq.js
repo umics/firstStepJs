@@ -20,7 +20,7 @@
     }
 
 Проверить, чтобы все работало без ошибок в консоли */
-
+/* 
 'use strict';
 
 let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
@@ -45,3 +45,5 @@ personalMovieDB.movies[a] = b;
 personalMovieDB.movies[c] = d;
 
 console.log(personalMovieDB);
+
+ */
