@@ -372,20 +372,159 @@ console.log(numberOfFilms) */
 
 //                                       Объекты
 
-const obj = new Object();
+// const obj = new Object();
 
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    }
+// const options = {   //      
+//     name: 'test',
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     },
+//     makeTest: function() {
+//         console.log('test');
+//     }
+// };
+
+// options.makeTest();
+
+// const {border, bg} = options.colors; 
+// console.log(border);
+
+// console.log(Object.keys(options).length);
+
+// console.log(options.name);
+
+// delete options.name;
+
+// console.log(options);
+
+// for (let key in options) {                                  //  способ перебора for in
+//     if (typeof(options[key]) === 'object') {
+//         for( let i in options[key]) {
+//             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);  
+//         }
+//     } else {
+//         console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//     }
+    
+// }
+
+//                             Массивы и псевдомассивы
+
+// const arr = [10, 4, 3, 226, 8];
+// arr.sort(compareNum);
+// console.log(arr);
+
+// function compareNum(a, b) {   // функция для сортировки num
+//     return a - b;
+// }
+
+// arr.forEach(function(item, i, arr) {
+//     console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
+
+// arr.pop(); // удаляет последний элемент 
+// arr.push(10);  //  добавляет элемент в конец массивы
+
+// console.log(arr); 
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// for (let value of arr) {   // Плюс том что его можно остановить  
+//     console.log(value);
+// }
+
+// const str = prompt("", "");
+// const products = str.split(", "); //split возвращает строку в массив 
+// products.sort(); // сортирует элементы как строки 
+// console.log(products.join('; ')); // join превращает массив в строку 
+
+// У псевдомассивов не используются методы
+
+//                              Передача по ссылке или по значению
+
+let a = 5, 
+    b = a;
+
+b = b + 5;
+
+console.log(b);
+console.log(a);
+
+const obj = {
+    a: 5,
+    b: 1
 };
 
-console.log(options.name);
+const copy = obj; // Ссылка.. нащывается передача по ссылке
 
-delete options.name;
+copy.a = 10;
 
-console.log(options);
+console.log(copy);
+console.log(obj);
+
+function copy(mainObj) {
+    let objCopy = {};
+
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+   return objCopy;
+}       
+
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7, 
+        y: 4
+    }  
+};
+
+const newNumbers = copy(numbers);
+
+newNumbers.a = 10;
+newNumbers.c.x = 10;
+
+console.log(newNumbers);
+console.log(numbers);
+
+const add = {
+    d: 17,
+    e: 20
+}
+
+ const clone = Object.assign({}, add); // Объединение объектов
+
+ clone.d = 20;
+
+console.log(clone);
+console.log(add);
+
+
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
+
+newArray[1] = 'sdsdfsdf';
+
+console.log(newArray);
+console.log(oldArray);
+
+//                       Четвертый способ создания поверхостных копий 
+
+const video = ['youtube', 'vimeo', 'rutube'],
+    blogs = ['wordpress', 'lifejournal', 'blogger'],
+    internet = [...video, ...blogs, 'vk', 'facebook']; // Оператор разворота ...
+
+    console.log(internet);
+
+    function log (a, b, c) {
+        console.log(a);
+        console.log(b);
+        console.log(c);
+    }
