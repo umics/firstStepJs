@@ -656,7 +656,10 @@ console.log(numberOfFilms) */
 //                             025  Отлавливаем ошибки в своём коде при помощи консоли разработчика. Breakpoints
 //                             026 Динамическая типизация 
 
+
+// To string 
 //1)
+
 
 console.log(typeof(String(null)));
 console.log(typeof(String(4)));
@@ -665,16 +668,64 @@ console.log(typeof(String(4)));
 
 console.log(typeof(5 + ''));  // Конкатенация- это сложение строк/строки с чем- то 
 
-let gg = 5;
+let num = 5;
 
-console.log("https://vk.com/catalog/" + gg);
+console.log("https://vk.com/catalog/" + num);
 
+const fontSize = 26 + 'px';
 
+// To Number 
+
+//1)
+console.log(typeof(Number('4')));
+
+//2)
+console.log(typeof(+'5'));
 
 //3)
+console.log(typeof(parseInt('15', 10)));
 
 
+let answ = +prompt('Hello', '');
 
 
- 
+// to boolean
+
+// 0, '', null, undefined, NaN; - false
+
+//1)
+let switcher = null;
+
+if (switcher) {
+    console.log('Working...');
+} 
+
+switcher = 1;
+
+if (switcher) {
+    console.log('Working...');
+} 
+
+//2)
+
+console.log(typeof(Boolean(4)));
+
+//3)
+console.log(typeof(!!'324'));
+
+console.log([] + false - null + true);
+
+let y = 1;
+let x = y = 2;
+
+console.log(x);
+
+console.log('12'[1]);
+
+console.log(2 && 1 && null && 0 && undefined);
+
+console.log( +"infinity" );
+console.log( +"Infinity" );
+
+//                                   Получение элементов со страницы
 
